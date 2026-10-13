@@ -1,10 +1,15 @@
-def greet_msg(user: str) -> str:
-    return f"Hello, {user}"
+from rich import print
+from rich.console import Console
+from rich.table import Table
 
-def farewell_msg(user: str) -> str:
-    return f"Goodbye, {user}"
+print("[bold green]Hello, students![/bold green]")
 
-print("Вас приветствует программа!")
-name = input("Введи своё ИМЯ: ")
-print(greet_msg(name))
-print(farewell_msg(name))
+table = Table(title="Student Grades")
+table.add_column("Name")
+table.add_column("Grade")
+
+table.add_row("Alice", "5")
+table.add_row("Bob", "4")
+table.add_row("Charlie", "5")
+
+Console().print(table)
